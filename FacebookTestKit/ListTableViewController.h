@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface ListTableViewController : UITableViewController
-@property (nonatomic, strong) NSDictionary *result;
+@property (nonatomic, strong) NSArray *result;
 @end

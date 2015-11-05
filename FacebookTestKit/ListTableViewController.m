@@ -18,8 +18,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSLog(@"resultArray = %@", [[_result objectForKey:@"posts"] objectForKey:@"data"]);
-    displayArray = [[_result objectForKey:@"posts"] objectForKey:@"data"];
+//    NSLog(@"resultArray = %@", [[_result objectForKey:@"posts"] objectForKey:@"data"]);
+//    displayArray = [[_result objectForKey:@"posts"] objectForKey:@"data"];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -40,8 +40,8 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
-    NSLog(@"count = %d", [displayArray count]);
-    return [displayArray count];
+    NSLog(@"count = %d", [_result count]);
+    return [_result count];
 }
 
 
@@ -52,7 +52,8 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"cell"];
     }
-    cell.textLabel.text = [[displayArray objectAtIndex:indexPath.row] valueForKey:@"message"];
+    cell.textLabel.text = [[_result objectAtIndex:indexPath.row] valueForKey:@"id"];
+    cell.textLabel.font = [UIFont systemFontOfSize:13.0f];
 //    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@", [[[_result objectForKey:@"data"] objectAtIndex:indexPath.row] valueForKey:@"id"]];
 //    
     return cell;
